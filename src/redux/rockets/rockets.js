@@ -22,14 +22,16 @@ const rocketsURL = "https://api.spacexdata.com/v3/rockets";
 
 export const fetchRockets = () => (dispatch) => {
     dispatch(getRocketRequest);
-    axios.get(rocketsURL)
+    axios.get("https://api.spacexdata.com/v3/rockets")
         .then((response) => {
-            const rockets = response.data.forEach(rocket => ({
+            const newData = response.data;
+            const rockets = newData.map((rocket) => ({
                 id: rocket.id,
-                rocket_name: rocket.name,
+                rocket_name: rocket.rocket_name,
                 description: rocket.description,
                 flickr_images: rocket.flickr_images[0],
             }));
+            console.log(rockets)
             dispatch(getRocketSuccess(rockets));
         })
         .catch((error) => {
@@ -49,11 +51,11 @@ const rocketsReducer = (state = initialState, action) => {
         case GET_ROCKET_REQUEST:
             return { ...state, loading: true };
 
-        case GET_ROCKET_REQUEST:
+        case GET_ROCKET_SUCCESS:
             return {
                 ...state,
                 loading: true,
-                rockets: [...state.rockets, action.payload],
+                rockets: action.payload,
                 error: '',
             };
 
