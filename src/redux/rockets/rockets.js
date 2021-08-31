@@ -23,12 +23,12 @@ export const getRocketFailure = (error) => ({
 export const reserveRocket = (payload) => ({
   type: RESERVE_ROCKET,
   payload,
-})
+});
 
 export const cancelRocket = (payload) => ({
   type: CANCEL_ROCKET,
   payload,
-})
+});
 
 export const fetchRockets = () => (dispatch) => {
   dispatch(getRocketRequest);
@@ -78,19 +78,17 @@ const rocketsReducer = (state = initialState, action) => {
     case RESERVE_ROCKET:
       return {
         ...state,
-        rockets: state.rockets.map(rocket => {
-          if (rocket.id !== action.payload.id)
-            return rocket;
+        rockets: state.rockets.map((rocket) => {
+          if (rocket.id !== action.payload.id) return rocket;
           return { ...rocket, reserved: true };
         }),
       };
 
-      case CANCEL_ROCKET:
+    case CANCEL_ROCKET:
       return {
         ...state,
-        rockets: state.rockets.map(rocket => {
-          if (rocket.id !== action.payload.id)
-            return rocket;
+        rockets: state.rockets.map((rocket) => {
+          if (rocket.id !== action.payload.id) return rocket;
           return { ...rocket, reserved: false };
         }),
       };

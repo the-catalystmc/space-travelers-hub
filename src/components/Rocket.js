@@ -17,17 +17,17 @@ const Rocket = (props) => {
     dispatch(
       reserveRocket({
         id,
-      })
-    )
-  }
+      }),
+    );
+  };
 
   const cancelReservation = () => {
     dispatch(
       cancelRocket({
         id,
-      })
-    )
-  }
+      }),
+    );
+  };
 
   return (
     <div className="Rocket-Container">
@@ -35,7 +35,11 @@ const Rocket = (props) => {
       <div className="Rocket-Info">
         <h3 className="Rocket-Title">{rocketName}</h3>
         <p className="Rocket-Text">{description}</p>
-      <ReserveButton reserved={reserved} reserveRocket={reserveUpdate} cancelRocket={cancelReservation} />
+        <ReserveButton
+          reserved={reserved}
+          reserveRocket={reserveUpdate}
+          cancelRocket={cancelReservation}
+        />
       </div>
     </div>
   );
@@ -45,10 +49,10 @@ const ReserveButton = (props) => {
   const { reserved, reserveRocket, cancelRocket } = props;
 
   if (reserved) {
-    return <button className="Rocket-Button-Cancel" type="button" onClick={cancelRocket}>Cancel Reservations</button>
+    return <button className="Rocket-Button-Cancel" type="button" onClick={cancelRocket}>Cancel Reservations</button>;
   }
-  return <button className="Rocket-Button" type="button" onClick={reserveRocket}>Reserve Rocket</button>
-}
+  return <button className="Rocket-Button" type="button" onClick={reserveRocket}>Reserve Rocket</button>;
+};
 
 Rocket.propTypes = {
   flickrImages: PropTypes.any,
