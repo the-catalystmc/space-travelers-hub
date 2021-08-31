@@ -1,7 +1,7 @@
-import fetchMissions from '../../controller/missions-api';
+import fetchMissions from "../../controller/missions-api";
 
-const GET_MISSIONS = 'missions/GET_MISSIONS';
-const CHANGE_STATUS = 'missions/CHANGE_STATUS';
+const GET_MISSIONS = "missions/GET_MISSIONS";
+const CHANGE_STATUS = "missions/CHANGE_STATUS";
 
 const getMissions = (payload) => ({
   type: GET_MISSIONS,
@@ -21,9 +21,11 @@ const missionsReducer = (state = initialState, action) => {
       return action.payload;
 
     case CHANGE_STATUS:
-      return state.map((mission) => (mission.mission_id === action.payload
-        ? { ...mission, reserved: true }
-        : mission));
+      return state.map((mission) =>
+        mission.mission_id === action.payload
+          ? { ...mission, reserved: !mission.reserved }
+          : mission
+      );
 
     default:
       return state;
