@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import rocketsReducer from './rockets/rockets';
 
 const reducer = combineReducers({
-    rockets: rocketsReducer,
+  rockets: rocketsReducer,
 });
 
 const store = createStore(reducer, applyMiddleware(logger, thunk));

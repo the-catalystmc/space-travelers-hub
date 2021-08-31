@@ -1,8 +1,9 @@
-import React from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import { Redirect } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import Rockets from "./components/Rockets";
+import React from 'react';
+import {
+  Route, BrowserRouter as Router, Switch, Redirect,
+} from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Rockets from './components/Rockets';
 // import {
 //   BrowserRouter as Router, Switch, Route, Link,
 // } from 'react-router-dom';

@@ -1,22 +1,25 @@
-import "../scss/style.scss";
-import rock from '../assets/rock.jpg'
+import React from 'react';
+import { PropTypes } from 'prop-types';
+import '../scss/style.scss';
+// import rock from '../assets/rock.jpg';
+
 const Rocket = (props) => {
-    const { rocket } = props;
+  const { rocket } = props;
 
-    const {
-        id, rocket_name, description, flikr_images,
-    } = rocket;
+  const {
+    id, rocketName, description, flickrImages,
+  } = rocket;
 
-    return (
-        <div id={id} className="Rocket-Container">
-            <img className="Rocket-Img" src="https://live.staticflickr.com/65535/48954138962_ee541e6755_b.jpg" />
-            <div className="Rocket-Info">
-                <h3 className="Rocket-Title">{rocket_name}</h3>
-                <p className="Rocket-Text">{description}</p>
-                <button className="Rocket-Button" type="button">Reserve Rocket</button>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div id={id} className="Rocket-Container">
+      <img className="Rocket-Img" src={flickrImages} alt={rocketName}/>
+      <div className="Rocket-Info">
+        <h3 className="Rocket-Title">{rocketName}</h3>
+        <p className="Rocket-Text">{description}</p>
+        <button className="Rocket-Button" type="button">Reserve Rocket</button>
+      </div>
+    </div>
+  );
+};
 
 export default Rocket;
