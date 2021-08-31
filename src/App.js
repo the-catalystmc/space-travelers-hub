@@ -10,9 +10,7 @@ import { getMissionsThunk } from './redux/missions/missions';
 import NavBar from './components/NavBar';
 import Missions from './components/Missions';
 import Rockets from './components/Rockets';
-// import {
-//   BrowserRouter as Router, Switch, Route, Link,
-// } from 'react-router-dom';
+import Profile from './components/Profile';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,7 +27,7 @@ function App() {
           <Missions />
         </Route>
         <Route path="/profile">
-          <div>prof</div>
+          <Profile />
         </Route>
         <Route path="/rockets">
           <Rockets />
