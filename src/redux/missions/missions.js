@@ -22,7 +22,7 @@ const missionsReducer = (state = initialState, action) => {
 
     case CHANGE_STATUS:
       return state.map((mission) => (mission.mission_id === action.payload
-        ? { ...mission, reserved: true }
+        ? { ...mission, reserved: !mission.reserved }
         : mission));
 
     default:
