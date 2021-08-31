@@ -1,0 +1,27 @@
+table {
+  table-layout: auto;
+
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+
+    .not-member {
+      background-color: #6d757d;
+      color: #fff;
+      display: inline;
+      white-space: nowrap;
+      border-radius: 4px;
+      padding: 5px 5px 3px 5px;
+    }
+
+    .join-mission {
+      white-space: nowrap;
+      background-color: transparent;
+      border-radius: 4px;
+      border: 2px solid #6d757d;
+      padding: 6px 8px 5px 8px;
+      font-size: 1rem;
+    }
+  }
+}
