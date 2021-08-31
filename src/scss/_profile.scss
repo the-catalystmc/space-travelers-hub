@@ -1,0 +1,27 @@
+.profile-wrapper {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+
+  .my-missions,
+  .my-rockets {
+    width: 45%;
+  }
+
+  h2 {
+    margin: 0.6rem 0;
+  }
+
+  ul {
+    border: 2px solid #dfdfdf;
+    border-radius: 4px;
+  }
+
+  li {
+    padding: 1rem 1.5rem;
+  }
+
+  li:not(:last-child) {
+    border-bottom: 2px solid #dfdfdf;
+  }
+}
