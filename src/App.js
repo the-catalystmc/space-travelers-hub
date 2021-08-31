@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   Route,
   BrowserRouter as Router,
   Switch,
   Redirect,
-} from "react-router-dom";
-import { getMissionsThunk } from "./redux/missions/missions";
-import NavBar from "./components/NavBar";
-import Missions from "./components/Missions";
-import Rockets from "./components/Rockets";
+} from 'react-router-dom';
+import { getMissionsThunk } from './redux/missions/missions';
+import NavBar from './components/NavBar';
+import Missions from './components/Missions';
+import Rockets from './components/Rockets';
 
 function App() {
   const dispatch = useDispatch();
