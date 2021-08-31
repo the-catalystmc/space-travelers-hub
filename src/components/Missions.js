@@ -1,9 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Mission from './Mission';
+import { changeStatus } from '../redux/missions/missions';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missionsReducer);
+  const dispatch = useDispatch();
+
+  const joinMission = (event) => {
+    dispatch(changeStatus(event.target.value));
+  };
 
   return (
     <div>
@@ -18,7 +24,11 @@ const Missions = () => {
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <Mission key={mission.mission_id} mission={mission} />
+            <Mission
+              key={mission.mission_id}
+              mission={mission}
+              joinMission={joinMission}
+            />
           ))}
         </tbody>
       </table>
