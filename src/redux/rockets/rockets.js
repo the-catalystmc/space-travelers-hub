@@ -3,6 +3,8 @@ import axios from 'axios';
 const GET_ROCKET_REQUEST = 'GET_ROCKET_REQUEST';
 const GET_ROCKET_SUCCESS = 'GET_ROCKET_SUCCESS';
 const GET_ROCKET_FAILURE = 'GET_ROCKET_FAILURE';
+const RESERVE_ROCKET = 'RESERVE_ROCKET';
+const CANCEL_ROCKET = 'CANCEL_ROCKET';
 
 export const getRocketRequest = () => ({
   type: GET_ROCKET_REQUEST,
@@ -18,6 +20,16 @@ export const getRocketFailure = (error) => ({
   payload: error,
 });
 
+export const reserveRocket = (payload) => ({
+  type: RESERVE_ROCKET,
+  payload,
+});
+
+export const cancelRocket = (payload) => ({
+  type: CANCEL_ROCKET,
+  payload,
+});
+
 export const fetchRockets = () => (dispatch) => {
   dispatch(getRocketRequest);
   axios.get('https://api.spacexdata.com/v3/rockets')
@@ -27,7 +39,7 @@ export const fetchRockets = () => (dispatch) => {
         id: rocket.id,
         rocketName: rocket.rocket_name,
         description: rocket.description,
-        flickrImages: rocket.flickr_images,
+        flickrImages: rocket.flickr_images[0],
       }));
       dispatch(getRocketSuccess(rockets));
     })
@@ -61,6 +73,24 @@ const rocketsReducer = (state = initialState, action) => {
         loading: false,
         rockets: [],
         error: action.payload,
+      };
+
+    case RESERVE_ROCKET:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => {
+          if (rocket.id !== action.payload.id) return rocket;
+          return { ...rocket, reserved: true };
+        }),
+      };
+
+    case CANCEL_ROCKET:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => {
+          if (rocket.id !== action.payload.id) return rocket;
+          return { ...rocket, reserved: false };
+        }),
       };
 
     default:
