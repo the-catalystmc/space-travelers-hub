@@ -1,6 +1,6 @@
 .Rocket-Container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 30px;
 }
 
@@ -11,4 +11,21 @@
 
 .Rocket-Info {
   padding: 0 30px;
+}
+
+.Rocket-Title {
+  margin-bottom: 10px;
+}
+
+.Rocket-Text {
+  margin-bottom: 10px;
+}
+
+.Rocket-Button {
+  background-color: rgb(60, 60, 255);
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
 }
