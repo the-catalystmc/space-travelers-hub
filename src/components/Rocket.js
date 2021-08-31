@@ -2,13 +2,13 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import '../scss/style.scss';
-import { reserveRocket } from '../redux/rockets/rockets';
+import { reserveRocket, cancelRocket } from '../redux/rockets/rockets';
 
 const Rocket = (props) => {
   const { rocket } = props;
 
   const {
-    id, rocketName, description, flickrImages,
+    id, rocketName, description, flickrImages, reserved,
   } = rocket;
 
   const dispatch = useDispatch();
@@ -19,7 +19,14 @@ const Rocket = (props) => {
         id,
       })
     )
-    console.log(id)
+  }
+
+  const cancelReservation = () => {
+    dispatch(
+      cancelRocket({
+        id,
+      })
+    )
   }
 
   return (
@@ -28,11 +35,20 @@ const Rocket = (props) => {
       <div className="Rocket-Info">
         <h3 className="Rocket-Title">{rocketName}</h3>
         <p className="Rocket-Text">{description}</p>
-        <button className="Rocket-Button" type="button" onClick={reserveUpdate}>Reserve Rocket</button>
+      <ReserveButton reserved={reserved} reserveRocket={reserveUpdate} cancelRocket={cancelReservation} />
       </div>
     </div>
   );
 };
+
+const ReserveButton = (props) => {
+  const { reserved, reserveRocket, cancelRocket } = props;
+
+  if (reserved) {
+    return <button className="Rocket-Button-Cancel" type="button" onClick={cancelRocket}>Cancel Reservations</button>
+  }
+  return <button className="Rocket-Button" type="button" onClick={reserveRocket}>Reserve Rocket</button>
+}
 
 Rocket.propTypes = {
   flickrImages: PropTypes.any,
