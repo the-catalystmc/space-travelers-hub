@@ -18,8 +18,6 @@ export const getRocketFailure = (error) => ({
   payload: error,
 });
 
-const rocketsURL = 'https://api.spacexdata.com/v3/rockets';
-
 export const fetchRockets = () => (dispatch) => {
   dispatch(getRocketRequest);
   axios.get('https://api.spacexdata.com/v3/rockets')
@@ -31,7 +29,6 @@ export const fetchRockets = () => (dispatch) => {
         description: rocket.description,
         flickrImages: rocket.flickr_images,
       }));
-      console.log(rockets.flickrImages);
       dispatch(getRocketSuccess(rockets));
     })
     .catch((error) => {

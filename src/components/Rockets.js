@@ -9,8 +9,6 @@ const Rockets = () => {
   const rocketsStatus = useSelector((state) => state.rockets.loading);
   const dispatch = useDispatch();
 
-  console.log(allRockets);
-
   useEffect(() => {
     if (rocketsStatus === false) {
       dispatch(fetchRockets());
