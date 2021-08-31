@@ -34,7 +34,11 @@ const Rocket = (props) => {
       <img className="Rocket-Img" src={flickrImages} alt={rocketName} />
       <div className="Rocket-Info">
         <h3 className="Rocket-Title">{rocketName}</h3>
-        <p className="Rocket-Text">{description}</p>
+        <p className="Rocket-Text">
+          <ReserveBadge reserved={reserved} />
+          {' '}
+          {description}
+        </p>
         <ReserveButton
           reserved={reserved}
           reserveRocket={reserveUpdate}
@@ -52,6 +56,14 @@ const ReserveButton = (props) => {
     return <button className="Rocket-Button-Cancel" type="button" onClick={cancelRocket}>Cancel Reservations</button>;
   }
   return <button className="Rocket-Button" type="button" onClick={reserveRocket}>Reserve Rocket</button>;
+};
+
+const ReserveBadge = (props) => {
+  const { reserved } = props;
+  if (reserved) {
+    return <span><button type="button" className="Rocket-Reserve">Reserved</button></span>;
+  }
+  return <span />;
 };
 
 Rocket.propTypes = {
