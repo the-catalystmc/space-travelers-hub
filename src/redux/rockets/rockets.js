@@ -31,7 +31,7 @@ export const fetchRockets = () => (dispatch) => {
                 description: rocket.description,
                 flickr_images: rocket.flickr_images[0],
             }));
-            console.log(rockets)
+            console.log(rockets.flickr_images)
             dispatch(getRocketSuccess(rockets));
         })
         .catch((error) => {

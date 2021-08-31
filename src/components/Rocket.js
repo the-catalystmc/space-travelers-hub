@@ -9,7 +9,7 @@ const Rocket = (props) => {
 
     return (
         <div id={id} className="Rocket-Container">
-            <img className="Rocket-Img" src={rock} alt="Logo" />
+            <img className="Rocket-Img" src="https://live.staticflickr.com/65535/48954138962_ee541e6755_b.jpg" />
             <div className="Rocket-Info">
                 <h3 className="Rocket-Title">{rocket_name}</h3>
                 <p className="Rocket-Text">{description}</p>
