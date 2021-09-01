@@ -1,6 +1,6 @@
-import { NavLink, Link } from "react-router-dom";
-import "../scss/style.scss";
-import logo from "../assets/planet.png";
+import { NavLink, Link } from 'react-router-dom';
+import '../scss/style.scss';
+import logo from '../assets/planet.png';
 
 const Navbar = () => (
   <div className="Nav-Container">
