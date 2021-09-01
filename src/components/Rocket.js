@@ -63,7 +63,7 @@ export const ReserveBadge = (props) => {
   if (reserved) {
     return <span><button role="textbox" type="button" className="Rocket-Reserve">Reserved</button></span>;
   }
-  return <span role="textbox" className="Rocket-Cancel">{''}</span>;
+  return <p className="Rocket-Cancel" />;
 };
 
 Rocket.propTypes = {
