@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/space-travelers-hub/static/css/main.162df1c3.chunk.css",
-    "main.js": "/space-travelers-hub/static/js/main.eeed1a06.chunk.js",
-    "main.js.map": "/space-travelers-hub/static/js/main.eeed1a06.chunk.js.map",
+    "main.js": "/space-travelers-hub/static/js/main.54132f14.chunk.js",
+    "main.js.map": "/space-travelers-hub/static/js/main.54132f14.chunk.js.map",
     "runtime-main.js": "/space-travelers-hub/static/js/runtime-main.a499419e.js",
     "runtime-main.js.map": "/space-travelers-hub/static/js/runtime-main.a499419e.js.map",
     "static/js/2.a4a84a31.chunk.js": "/space-travelers-hub/static/js/2.a4a84a31.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.a499419e.js",
     "static/js/2.a4a84a31.chunk.js",
     "static/css/main.162df1c3.chunk.css",
-    "static/js/main.eeed1a06.chunk.js"
+    "static/js/main.54132f14.chunk.js"
   ]
 }
