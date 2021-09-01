@@ -2,7 +2,9 @@ import React from 'react';
 
 const Mission = ({ mission, joinMission }) => (
   <tr>
-    <td>{mission.mission_name}</td>
+    <td>
+      <h3>{mission.mission_name}</h3>
+    </td>
     <td>{mission.description}</td>
     {mission.reserved && (
       <td>

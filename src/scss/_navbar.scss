@@ -1,8 +1,23 @@
+@mixin breakpoint($point) {
+  @if $point == medium {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
 .Nav-Container {
   display: flex;
   justify-content: space-between;
-  height: 50px;
-  padding: 30px 10px;
+  margin: 0 2rem 2rem 2rem;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid lightgray;
+  align-items: center;
+
+  @include breakpoint(medium) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .Nav-Container img {
@@ -18,16 +33,29 @@
 .Nav-Items {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 
 .Nav-Item {
-  margin-right: 10px;
+  margin-right: 1.2rem;
 }
 
 a {
   text-decoration: none;
+  color: #2d8cff;
+  font-size: 1.2rem;
+  white-space: nowrap;
 }
 
 .active {
   text-decoration: underline;
+}
+
+.divider {
+  border-right: 2px solid #000;
+  color: transparent;
+}
+
+.Header-Title {
+  white-space: nowrap;
 }

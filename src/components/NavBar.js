@@ -18,6 +18,9 @@ const Navbar = () => (
         <li className="Nav-Item">
           <NavLink to="/missions">Missions</NavLink>
         </li>
+        <li className="divider Nav-Item">
+          <p>|</p>
+        </li>
         <li className="Nav-Item">
           <NavLink to="/profile">My Profile</NavLink>
         </li>

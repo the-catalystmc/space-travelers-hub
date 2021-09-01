@@ -1,24 +1,16 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import {
   Route,
   BrowserRouter as Router,
   Switch,
   Redirect,
 } from 'react-router-dom';
-import { getMissionsThunk } from './redux/missions/missions';
 import NavBar from './components/NavBar';
 import Missions from './components/Missions';
 import Rockets from './components/Rockets';
 import Profile from './components/Profile';
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMissionsThunk());
-  }, []);
-
   return (
     <Router>
       <NavBar />
