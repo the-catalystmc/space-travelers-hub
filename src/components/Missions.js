@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Mission from './Mission';
-import { changeStatus } from '../redux/missions/missions';
+import { changeStatus, getMissionsThunk } from '../redux/missions/missions';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missionsReducer);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!missions.length) {
+      dispatch(getMissionsThunk());
+    }
+  }, []);
 
   const joinMission = (event) => {
     dispatch(changeStatus(event.target.value));
   };
 
   return (
-    <div>
+    <div className="table-wrapper">
       <table>
         <thead>
           <tr>

@@ -12,6 +12,9 @@ const Profile = () => {
     <div className="profile-wrapper">
       <div className="my-missions">
         <h2>My Missions</h2>
+        {filteredMissions.length === 0 && (
+          <p className="note">There are no joined missions</p>
+        )}
         {filteredMissions.length !== 0 && (
           <ul>
             {filteredMissions.map((mission) => (
@@ -22,6 +25,9 @@ const Profile = () => {
       </div>
       <div className="my-rockets">
         <h2>My Rockets</h2>
+        {filteredRockets.length === 0 && (
+          <p className="note">There are no reserved rockets</p>
+        )}
         {filteredRockets.length !== 0 && (
           <ul>
             {filteredRockets.map((rocket) => (

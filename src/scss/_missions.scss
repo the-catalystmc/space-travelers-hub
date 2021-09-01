@@ -1,9 +1,35 @@
+@mixin breakpoint($point) {
+  @if $point == medium {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+.table-wrapper {
+  margin: 0 3rem 3rem 3rem;
+
+  @include breakpoint(medium) {
+    overflow-x: auto;
+  }
+}
+
 table {
   table-layout: auto;
+  border-collapse: collapse;
+  width: 100%;
+
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  thead > tr:first-child {
+    background-color: #fff;
+  }
 
   th,
   td {
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     padding: 8px;
 
     .not-member {
