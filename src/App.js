@@ -25,7 +25,7 @@ function App() {
           <Rockets />
         </Route>
         <Route exact path="/">
-          <Redirect to="rockets" />
+          <Redirect to="/rockets" />
         </Route>
       </Switch>
     </Router>
