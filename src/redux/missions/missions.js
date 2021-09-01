@@ -1,9 +1,11 @@
-import fetchMissions from '../../controller/missions-api';
+import axios from 'axios';
+
+const baseUrl = 'https://api.spacexdata.com/v3/missions';
 
 const GET_MISSIONS = 'missions/GET_MISSIONS';
 const CHANGE_STATUS = 'missions/CHANGE_STATUS';
 
-const getMissions = (payload) => ({
+export const getMissions = (payload) => ({
   type: GET_MISSIONS,
   payload,
 });
@@ -31,8 +33,13 @@ const missionsReducer = (state = initialState, action) => {
 };
 
 export const getMissionsThunk = () => (dispatch) => {
-  fetchMissions().then((res) => {
-    dispatch(getMissions(res));
+  axios.get(baseUrl).then((res) => {
+    const response = res.data.map((r) => ({
+      mission_id: r.mission_id,
+      mission_name: r.mission_name,
+      description: r.description,
+    }));
+    dispatch(getMissions(response));
   });
 };
 
