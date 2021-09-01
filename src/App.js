@@ -1,9 +1,6 @@
 import React from 'react';
 import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-  Redirect,
+  Route, HashRouter as Router, Switch, Redirect,
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Missions from './components/Missions';
@@ -15,16 +12,16 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
+        <Route path="/rockets">
+          <Rockets />
+        </Route>
         <Route path="/missions">
           <Missions />
         </Route>
         <Route path="/profile">
           <Profile />
         </Route>
-        <Route path="/rockets">
-          <Rockets />
-        </Route>
-        <Redirect from="/" to="rockets" />
+        <Redirect from="/" to="/rockets" />
       </Switch>
     </Router>
   );

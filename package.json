@@ -1,5 +1,6 @@
 {
   "name": "space-travelers-hub",
+  "homepage": "http://the-catalystmc.github.io/space-travelers-hub",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
