@@ -5,7 +5,7 @@ import logo from '../assets/planet.png';
 const Navbar = () => (
   <div className="Nav-Container">
     <div className="Header-Logo">
-      <NavLink exact to="/">
+      <NavLink to="/">
         <img src={logo} alt="Logo" />
       </NavLink>
       <h1 className="Header-Title">Space Travelers Hub</h1>
