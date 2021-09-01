@@ -12,9 +12,9 @@ import Profile from './components/Profile';
 
 function App() {
   return (
-    <Router>
-      <NavBar />
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
+        <NavBar />
         <Route path="/missions">
           <Missions />
         </Route>
