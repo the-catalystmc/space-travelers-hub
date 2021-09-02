@@ -1,0 +1,47 @@
+@mixin breakpoint($point) {
+  @if $point == medium {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+.profile-wrapper {
+  padding: 0 4rem;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint(medium) {
+    flex-direction: column;
+  }
+
+  .my-missions,
+  .my-rockets {
+    width: 45%;
+
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    margin: 0.6rem 0;
+  }
+
+  .note {
+    font-style: italic;
+  }
+
+  ul {
+    border: 2px solid #dfdfdf;
+    border-radius: 4px;
+  }
+
+  li {
+    padding: 1rem 1.5rem;
+  }
+
+  li:not(:last-child) {
+    border-bottom: 2px solid #dfdfdf;
+  }
+}

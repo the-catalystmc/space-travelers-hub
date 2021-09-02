@@ -1,0 +1,79 @@
+@mixin breakpoint($point) {
+  @if $point == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+.Rocket-Container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+  }
+}
+
+.Rocket-Img {
+  width: 200px;
+  height: 150px;
+  border-radius: 2px;
+
+  @include breakpoint(mobile) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.Rocket-Info {
+  padding: 0 30px;
+
+  @include breakpoint(mobile) {
+    padding: 0;
+  }
+}
+
+.Rocket-Title {
+  margin-bottom: 10px;
+
+  @include breakpoint(mobile) {
+    margin: 6px 0;
+  }
+}
+
+.Rocket-Text {
+  margin-bottom: 10px;
+}
+
+.Rocket-Reserve {
+  background-color: #18a2b8;
+  color: white;
+  padding: 2px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+}
+
+.Rocket-Button {
+  background-color: #2d8cff;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+
+  @include breakpoint(mobile) {
+    width: 100%;
+  }
+}
+
+.Rocket-Button-Cancel {
+  background-color: white;
+  color: #7b8289;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #a3a8ad;
+}
