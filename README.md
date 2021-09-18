@@ -15,7 +15,7 @@ A web application for a company that provides commercial and scientific space tr
 
 # Screenshots
 
-![screenshot](./screenshot/app-screenshot.png)
+![space travelers hub](https://user-images.githubusercontent.com/39852288/133906471-075e26a7-db6f-4544-8aad-93a1ae442d60.gif)
 
 ## Live Demo
 
