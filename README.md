@@ -1,8 +1,13 @@
-# Project Name
-
-Space Travelers Hub
+# Space Travelers Hub
 
 A web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
+
+![space travelers hub](https://user-images.githubusercontent.com/39852288/133909876-b2423b3f-28d6-4d80-981d-6bf1816742ba.gif)
+
+## Live Demo
+
+You can see my page live here:
+[Check it out!](https://the-catalystmc.github.io/space-travelers-hub/)
 
 ## Built With
 
@@ -13,19 +18,52 @@ A web application for a company that provides commercial and scientific space tr
 - ![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-# Screenshots
+## API Providers
 
-![space travelers hub](https://user-images.githubusercontent.com/39852288/133906471-075e26a7-db6f-4544-8aad-93a1ae442d60.gif)
-
-## Live Demo
-
-You can see my page live here:
-[Check it out!](https://the-catalystmc.github.io/space-travelers-hub/)
+- [SpaceX API](https://docs.spacexdata.com/)
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps. You can either download the zip file, or clone the repository from [here](https://github.com/the-catalystmc/space-travelers-hub). Once the repository is available locally you can use: `npm install` to install the packages `npm start` to run the server on local server.
-To run tests `npm test` can be used.
+### Installation
+
+1. Clone the repo
+
+   ```sh
+   git clone git@github.com:the-catalystmc/space-travelers-hub.git
+   ```
+2. Install NPM packages
+
+   ```sh
+   npm install
+   ```
+### Usage
+
+1. Execute program
+
+   ```sh
+   npm start
+   
+### Tests
+   
+1. Run Tests
+
+   ```sh
+   npm test
+
+## Acknowledgements
+
+- Use React documentation.
+- Use React components.
+- Use React props.
+- Use React Router.
+- Connect React and Redux.
+- Handle events in a React app.
+- Write unit tests with React Testing Library.
+- Use styles in a React app.
+- Use React life cycle methods.
+- Apply React best practices and language style guides in code.
+- Use store, actions and reducers in React.
+- Perform a code review for a team member.
 
 ## Authors
 
@@ -50,3 +88,7 @@ Feel free to check the [issues page](https://github.com/the-catalystmc/space-tra
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) licensed.
